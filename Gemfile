@@ -44,15 +44,22 @@ gem 'devise'
 gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
+gem 'decent_decoration'
+gem 'decent_exposure'
+gem 'draper'
 
 group :development do
   gem 'html2haml'
   gem 'rails_apps_testing'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'letter_opener'
+  gem 'pry-rails'
 end
 
 group :development, :test do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
