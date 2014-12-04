@@ -1,0 +1,4 @@
+RECIPES
+["devise", "frontend", "gems", "omniauth", "setup", "tests"]
+PREFERENCES
+{:dev_webserver=>"webrick", :prod_webserver=>"same", :database=>"postgresql", :templates=>"haml", :tests=>"rspec", :continuous_testing=>"none", :frontend=>"bootstrap3", :email=>"none", :authentication=>"devise", :devise_modules=>"default", :authorization=>"none", :form_builder=>"simple_form"}
