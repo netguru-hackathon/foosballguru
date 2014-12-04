@@ -41,12 +41,16 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
 gem 'decent_decoration'
 gem 'decent_exposure'
 gem 'draper'
+gem 'netguru_theme'
 
 group :development do
   gem 'html2haml'
