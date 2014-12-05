@@ -16,4 +16,14 @@ class Match < ActiveRecord::Base
     errors.add(:team_1_score, "cannot be 2 while second team score is 2") if (team_1_score == 2) and (team_2_score == 2)
     errors.add(:team_1_score, "cannot be less than 2 while second team score is less than 2") if (team_1_score < 2) and (team_2_score < 2)
   end
+
+  def winner
+    if team_1_score > team_2_score
+      team_1
+    elsif team_1_score < team_2_score
+      team_2
+    else
+      nil
+    end
+  end
 end
