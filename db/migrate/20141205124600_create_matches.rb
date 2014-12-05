@@ -2,7 +2,7 @@ class CreateMatches < ActiveRecord::Migration
   def change
     create_table :matches do |t|
       t.integer :team_1_score
-      t.integer :team_1_score
+      t.integer :team_2_score
       t.integer :level
 
       t.timestamps
