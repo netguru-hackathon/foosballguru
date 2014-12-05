@@ -31,11 +31,22 @@
   }
 }
 .match {
+  .separator {
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    top: 0;
+    height: 140px;
+    border-right: 1px solid #b6b6b6;
+  }
   .team {
     position: relative;
-    width: 60px;
+    width: 50%;
+    height: 100%;
     float: right;
     & img {
+      margin-top: 10px;
+      margin-bottom: 10px;
       @include circle;
     }
   }
