@@ -9,5 +9,7 @@
         %span.icon-bar
       = link_to 'FoosballGuru', root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li= link_to 'New Championship', new_championship_path
       %ul.nav.navbar-nav.navbar-right
         = render 'layouts/navigation_links'
