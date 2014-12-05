@@ -7,10 +7,10 @@ class Match < ActiveRecord::Base
   validates :team_1, presence: true
   validates :team_2, presence: true
 
-  validates :team_1_score, numericality: { less_than: 3 }
-  validates :team_2_score, numericality: { less_than: 3 }
+  validates :team_1_score, numericality: { less_than: 3 }, on: :update
+  validates :team_2_score, numericality: { less_than: 3 }, on: :update
 
-  validate :scores
+  validate :scores, on: :update
 
   def scores
     errors.add(:team_1_score, "cannot be 2 while second team score is 2") if (team_1_score == 2) and (team_2_score == 2)
