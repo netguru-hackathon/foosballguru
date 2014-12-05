@@ -4,12 +4,9 @@
       .subtitle
         %h2 Current championships
       .main
-        .championship.square.active
-          %p Lorem Ipsum - Active
-        .championship.square.pending
-          %p Lorem Ipsum - Pending
-        .championship.square.closed
-          %p Lorem Ipsum - Closed
+        - championships.each do |championship|
+          = link_to championship_path(championship) do
+            .championship.square.active
 .row
   .col-md-10.col-md-offset-1
     .recent-matches.box
