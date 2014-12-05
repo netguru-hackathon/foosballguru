@@ -16,6 +16,11 @@ class ChampionshipsController < ApplicationController
     end
   end
 
+  def show
+    @championship = Championship.find(params[:id])
+    @matches_to_draw = ChampionshipDrawer(@championship.id)
+  end
+
   private
 
   def participant_count_valid?

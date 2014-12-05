@@ -1,0 +1,10 @@
+.match-table
+  - @matches_to_draw.each_with_index do |matches, level|
+    .pierdol
+      .match-row
+        - matches.each do |match|
+          .match-cell
+            = match.team_1
+            = 'vs'
+            = match.team_2
+            = link_to 'Podaj wynik', edit_championship_match_path(@championship.id, match.id)
