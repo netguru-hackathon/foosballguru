@@ -18,7 +18,7 @@ class ChampionshipsController < ApplicationController
 
   def show
     @championship = Championship.find(params[:id])
-    @matches_to_draw = ChampionshipDrawer(@championship.id)
+    @matches_to_draw = ChampionshipDrawer.new(@championship.id).call
   end
 
   private

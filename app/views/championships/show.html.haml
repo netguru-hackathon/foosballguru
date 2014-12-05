@@ -5,6 +5,7 @@
         - matches.each do |match|
           .match-cell
             = match.team_1
-            = 'vs'
+            %div
+              = 'vs'
             = match.team_2
             = link_to 'Podaj wynik', edit_championship_match_path(@championship.id, match.id)

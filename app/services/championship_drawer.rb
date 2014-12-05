@@ -2,6 +2,7 @@ class ChampionshipDrawer
 
   def initialize(championship_id)
     @matches = Championship.find(championship_id).matches
+    @championship = Championship.find(championship_id)
   end
 
   def call
@@ -11,6 +12,6 @@ class ChampionshipDrawer
   private
 
   def levels_count
-    Math.log2(@matches.where(level: 0).count).to_i
+    Math.log2(@championship.participants_count.to_i).to_i
   end
 end
