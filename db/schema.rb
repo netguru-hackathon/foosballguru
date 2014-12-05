@@ -11,10 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205112806) do
+ActiveRecord::Schema.define(version: 20141205125233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "championships", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matches", force: true do |t|
+    t.integer  "team_1_score"
+    t.integer  "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "team_1_id"
+    t.integer  "team_2_id"
+    t.integer  "championship_id"
+  end
+
+  add_index "matches", ["championship_id"], name: "index_matches_on_championship_id", using: :btree
+  add_index "matches", ["team_1_id"], name: "index_matches_on_team_1_id", using: :btree
+  add_index "matches", ["team_2_id"], name: "index_matches_on_team_2_id", using: :btree
+
+  create_table "teams", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_1_id"
+    t.integer  "user_2_id"
+  end
+
+  add_index "teams", ["user_1_id"], name: "index_teams_on_user_1_id", using: :btree
+  add_index "teams", ["user_2_id"], name: "index_teams_on_user_2_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
