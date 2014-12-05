@@ -50,6 +50,7 @@ gem 'decent_decoration'
 gem 'decent_exposure'
 gem 'draper'
 gem 'netguru_theme'
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'html2haml'
