@@ -21,10 +21,10 @@ class ChampionshipCreator
   end
 
   def create_matches(teams, championship)
-    level_0 = teams.in_groups_of(2).map do |team_1, team_2|
-      Match.create!(team_1: team_1, team_2, level: 0, championship: championship)
+    i = 0
+    teams.in_groups_of(2).map do |team_1, team_2|
+      Match.create!(team_1: team_1, team_2: team_2, level: 0, championship: championship, position: i)
+      i += 1
     end
-    level_1 = 2.times.map { Match.create!(championship: championship) }
-    level_2 = Match.create!(championship: championship)
   end
 end
