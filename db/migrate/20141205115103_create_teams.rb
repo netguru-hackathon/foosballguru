@@ -6,7 +6,7 @@ class CreateTeams < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_reference :temas, :user_1, index: true
-    add_reference :temas, :user_2, index: true
+    add_reference :teams, :user_1, index: true
+    add_reference :teams, :user_2, index: true
   end
 end
