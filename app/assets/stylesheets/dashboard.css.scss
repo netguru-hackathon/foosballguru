@@ -1,3 +1,68 @@
-// Place all the styles related to the Dashboard controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin inline {
+  display: inline-block;
+  position: relative;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+@mixin circle {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.box {
+  overflow: hidden;
+  margin: 5px;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #d6d6d6;
+  .main { padding-top: 60px; }
+  .subtitle {
+    border-bottom: 1px solid #d6d6d6;
+    background-color: #f6f6f6 !important;
+    left: 0;
+    padding: 0 10px;
+    height: 60px;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    background-color: #fff;
+  }
+}
+.match {
+  .team {
+    position: relative;
+    width: 60px;
+    float: right;
+    & img {
+      @include circle;
+    }
+  }
+}
+
+.championship {
+  background-image: url(prize.png);
+  background-size: cover;
+  &.closed {
+    background-color: #000;
+    opacity: .8; }
+}
+.round {
+  @include inline;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: #123456;
+  overflow: hidden;
+}
+
+.square {
+  @include inline;
+  height: 140px;
+  width: 140px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px 2px rgba(0,0,0,0.5);
+}
+

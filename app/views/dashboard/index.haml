@@ -1,2 +1,39 @@
-%h1
-  Hello to Foosballguru dashboard!
+.row
+  .col-md-10.col-md-offset-1
+    .championships.box
+      .subtitle
+        %h2 Current championships
+      .main
+        .championship.square.active
+          %p Lorem Ipsum - Active
+        .championship.square.pending
+          %p Lorem Ipsum - Pending
+        .championship.square.closed
+          %p Lorem Ipsum - Closed
+.row
+  .col-md-10.col-md-offset-1
+    .recent-matches.box
+      .subtitle
+        %h2 Recent matches
+      .main
+        .match.square
+          .team
+            = gravatar_image_tag('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' })
+            = gravatar_image_tag('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' })
+          .team
+            = gravatar_image_tag('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' })
+            = gravatar_image_tag('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' })
+        .match.square
+.row
+  .col-md-10.col-md-offset-1
+    .recent-players.box
+      .subtitle
+        %h2 Recent players
+      .main
+        .player.round
+          / = gravatar_image_tag('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' })
+        .player.round
+          = gravatar_image_tag('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' })
+        .player.round
+          = gravatar_image_tag('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' })
+
