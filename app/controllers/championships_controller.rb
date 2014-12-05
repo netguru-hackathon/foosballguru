@@ -7,7 +7,7 @@ class ChampionshipsController < ApplicationController
   def create
     @championship = Championship.new(champ_params)
     @users = User.all
-    if participant_count_valid? && @championship.save
+    if participant_count_valid? && @championship.valid?
       ChampionshipCreator.new(params[:user_ids]).create!
       redirect_to root_url, notice: 'Championship has been created! Nie graj środkiem!'
     else
