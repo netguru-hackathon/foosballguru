@@ -1,0 +1,11 @@
+%h2
+  Edit match:
+
+
+= simple_form_for [championship, match] do |f|
+  = f.input :team_1_score
+  = f.input :team_2_score
+  = f.button :submit
+
+
+= link_to 'Back to championship', championship_path(championship)
