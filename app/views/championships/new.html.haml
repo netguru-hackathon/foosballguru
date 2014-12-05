@@ -2,6 +2,10 @@
   .col-sm-6
     = simple_form_for @championship do |f|
       = f.input :participants_count, collection: Championship::CHAMP_SIZES, include_blank: false
+      %label
+        Check all
+        = check_box_tag "check_all"
+      %br
       - @users.each do |u|
         = label_tag "user_ids_#{u.id}", u.email
         = check_box_tag "user_ids[]", u.id, false, id: "user_ids_#{u.id}"
