@@ -1,3 +1,3 @@
 class Championship < ActiveRecord::Base
-  has_many :maches
+  has_many :matches
 end
