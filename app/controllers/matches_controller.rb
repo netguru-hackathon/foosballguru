@@ -10,6 +10,7 @@ class MatchesController < ApplicationController
 
   def update
     if match.update_attributes(match_params)
+      ChampionshipUpdater.new(championship.id, match.id).update
       flash[:notice] = "You updated match between #{match.team_1.name} and #{match.team_2.name}."
       redirect_to championship
     else
