@@ -12,6 +12,6 @@ class ChampionshipDrawer
   private
 
   def levels_count
-    Math.log2(@championship.participants_count.to_i).to_i
+    Math.log2(@championship.participants_count.to_i).to_i - 1
   end
 end
