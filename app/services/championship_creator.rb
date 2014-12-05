@@ -1,12 +1,12 @@
 class ChampionshipCreator
-  attr_reader :player_ids
+  attr_reader :attrs
 
-  def initialize(player_ids)
-    @player_ids = player_ids
+  def initialize(attrs)
+    @atrrs = attrs
   end
 
   def create!
-    championship = Championship.create!
+    championship = Championship.create(name: attrs[:name])!
     teams = create_teams
     create_matches(teams, championship)
     championship
@@ -15,7 +15,7 @@ class ChampionshipCreator
   private
 
   def create_teams
-    player_ids.shuffle.in_groups_of(2).map do |user_1, user_2|
+    attrs[:user_ids].shuffle.in_groups_of(2).map do |user_1, user_2|
       Team.create!(user_1: user_1, user_2: user_2)
     end
   end
