@@ -10,8 +10,11 @@ class MatchesController < ApplicationController
 
   def update
     if match.update_attributes(match_params)
-      ChampionshipUpdater.new(championship.id, match.id).update
-      flash[:notice] = "You updated match between #{match.team_1.name} and #{match.team_2.name}."
+      if ChampionshipUpdater.new(championship.id, match.id).update == :final
+        flash[:notice] = "Final match!!!!!1111"
+      else
+        flash[:notice] = "You updated match between #{match.team_1.name} and #{match.team_2.name}."
+      end
       redirect_to championship
     else
       render 'edit'

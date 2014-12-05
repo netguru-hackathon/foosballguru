@@ -6,7 +6,7 @@ class ChampionshipCreator
   end
 
   def create!
-    championship = Championship.create!
+    championship = Championship.create!(participants_count: player_ids.count)
     teams = create_teams
     create_matches(teams, championship)
     championship
