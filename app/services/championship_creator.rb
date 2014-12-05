@@ -6,7 +6,7 @@ class ChampionshipCreator
   end
 
   def create!
-    championship = Championship.create(name: attrs[:name])!
+    championship = Championship.create!
     teams = create_teams
     create_matches(teams, championship)
     championship
