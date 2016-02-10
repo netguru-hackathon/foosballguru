@@ -3,6 +3,9 @@ class CallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
     @user = User.from_omniauth(request.env["omniauth.auth"])
+    if User.from_omniauth(request.env["omniauth.auth"]) && User.from_omniauth(request.env["omniauth.auth"])
+      test = "test var"
+    end
     sign_in_and_redirect @user
   end
 
